@@ -28,7 +28,7 @@ function! ale#cursor#TruncatedEcho(original_message) abort
         silent! setlocal shortmess+=T
 
         try
-            exec "norm! :echomsg l:message\n"
+            exec "norm! \<Cmd>echomsg l:message\n"
         catch /^Vim\%((\a\+)\)\=:E523/
             " Fallback into manual truncate (#1987)
             let l:winwidth = winwidth(0)
